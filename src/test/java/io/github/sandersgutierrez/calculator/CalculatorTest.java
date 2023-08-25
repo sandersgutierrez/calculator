@@ -52,8 +52,8 @@ class CalculatorTest {
     @Test
     @DisplayName("Given two numbers when invoke calculate method with the subtract operation then return the difference between the two numbers")
     void givenTwoNumbers_whenInvokeMethodCalculateWithTheSubtractOperation_thenReturnTheDifferenceBetweenTheTwoNumbers() {
-        int result = calculator.calculate(8, 4, "divide");
-        assertEquals(2, result);
+        int result = calculator.calculate(8, 4, "subtract");
+        assertEquals(4, result);
     }
 
     @AfterEach
