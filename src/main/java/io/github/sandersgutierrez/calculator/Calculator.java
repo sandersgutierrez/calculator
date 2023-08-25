@@ -5,11 +5,7 @@ public class Calculator {
         System.out.println("Calculator!");
     }
 
-    public int calculate(int a, int b, String operator) {
-        Operation targetOperation = OperationFactory
-            .getOperation(operator)
-            .orElseThrow(() -> new IllegalArgumentException("Invalid Operator"));
-
-        return targetOperation.apply(a, b);
+    public int calculate(int a, int b, Operator operator) {
+        return operator.apply(a, b);
     }
 }

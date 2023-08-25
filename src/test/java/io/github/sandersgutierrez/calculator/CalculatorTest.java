@@ -31,29 +31,29 @@ class CalculatorTest {
     @Test
     @DisplayName("Given two numbers when invoke calculate method with the add operation then return the sum total between the two numbers")
     void givenTwoNumbers_whenInvokeMethodCalculateWithTheAddOperation_thenReturnTheSumBetweenTheTwoNumbers() {
-        int result = calculator.calculate(8, 4, "add");
+        int result = calculator.calculate(8, 4, Operator.ADD);
         assertEquals(12, result);
+    }
+
+    @Test
+    @DisplayName("Given two numbers when invoke calculate method with the subtract operation then return the difference between the two numbers")
+    void givenTwoNumbers_whenInvokeMethodCalculateWithTheSubtractOperation_thenReturnTheDifferenceBetweenTheTwoNumbers() {
+        int result = calculator.calculate(8, 4, Operator.SUBTRACT);
+        assertEquals(4, result);
     }
 
     @Test
     @DisplayName("Given two numbers when invoke calculate method with the multiply operation then return the multiplication result between the two numbers")
     void givenTwoNumbers_whenInvokeMethodCalculateWithTheMultiplyOperation_thenReturnTheMultiplicationResultBetweenTheTwoNumbers() {
-        int result = calculator.calculate(8, 4, "multiply");
+        int result = calculator.calculate(8, 4, Operator.MULTIPLY);
         assertEquals(32, result);
     }
 
     @Test
     @DisplayName("Given two numbers when invoke calculate method with the divide operation then return the quotient between the two numbers")
     void givenTwoNumbers_whenInvokeMethodCalculateWithTheDivideOperation_thenReturnTheQuotientBetweenTheTwoNumbers() {
-        int result = calculator.calculate(8, 4, "divide");
+        int result = calculator.calculate(8, 4, Operator.DIVIDE);
         assertEquals(2, result);
-    }
-
-    @Test
-    @DisplayName("Given two numbers when invoke calculate method with the subtract operation then return the difference between the two numbers")
-    void givenTwoNumbers_whenInvokeMethodCalculateWithTheSubtractOperation_thenReturnTheDifferenceBetweenTheTwoNumbers() {
-        int result = calculator.calculate(8, 4, "subtract");
-        assertEquals(4, result);
     }
 
     @AfterEach
