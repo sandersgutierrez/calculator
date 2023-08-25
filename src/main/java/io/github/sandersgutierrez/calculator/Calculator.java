@@ -5,7 +5,7 @@ public class Calculator {
         System.out.println("Calculator!");
     }
 
-    public int calculate(int a, int b, Operator operator) {
-        return operator.apply(a, b);
+    public int calculate(Command command) {
+        return command.execute();
     }
 }

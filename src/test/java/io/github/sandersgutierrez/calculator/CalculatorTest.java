@@ -31,29 +31,25 @@ class CalculatorTest {
     @Test
     @DisplayName("Given two numbers when invoke calculate method with the add operation then return the sum total between the two numbers")
     void givenTwoNumbers_whenInvokeMethodCalculateWithTheAddOperation_thenReturnTheSumBetweenTheTwoNumbers() {
-        int result = calculator.calculate(8, 4, Operator.ADD);
-        assertEquals(12, result);
+        assertEquals(12, calculator.calculate(new AddCommand(8, 4)));
     }
 
     @Test
     @DisplayName("Given two numbers when invoke calculate method with the subtract operation then return the difference between the two numbers")
     void givenTwoNumbers_whenInvokeMethodCalculateWithTheSubtractOperation_thenReturnTheDifferenceBetweenTheTwoNumbers() {
-        int result = calculator.calculate(8, 4, Operator.SUBTRACT);
-        assertEquals(4, result);
+        assertEquals(4, calculator.calculate(new SubtractCommand(8, 4)));
     }
 
     @Test
     @DisplayName("Given two numbers when invoke calculate method with the multiply operation then return the multiplication result between the two numbers")
     void givenTwoNumbers_whenInvokeMethodCalculateWithTheMultiplyOperation_thenReturnTheMultiplicationResultBetweenTheTwoNumbers() {
-        int result = calculator.calculate(8, 4, Operator.MULTIPLY);
-        assertEquals(32, result);
+        assertEquals(32, calculator.calculate(new MultiplyCommand(8, 4)));
     }
 
     @Test
     @DisplayName("Given two numbers when invoke calculate method with the divide operation then return the quotient between the two numbers")
     void givenTwoNumbers_whenInvokeMethodCalculateWithTheDivideOperation_thenReturnTheQuotientBetweenTheTwoNumbers() {
-        int result = calculator.calculate(8, 4, Operator.DIVIDE);
-        assertEquals(2, result);
+        assertEquals(2, calculator.calculate(new DivideCommand(8, 4)));
     }
 
     @AfterEach
