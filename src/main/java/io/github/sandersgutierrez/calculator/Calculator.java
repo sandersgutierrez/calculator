@@ -6,18 +6,10 @@ public class Calculator {
     }
 
     public int calculate(int a, int b, String operator) {
-        int result = Integer.MIN_VALUE;
+        Operation targetOperation = OperationFactory
+            .getOperation(operator)
+            .orElseThrow(() -> new IllegalArgumentException("Invalid Operator"));
 
-        if ("add".equals(operator)) {
-            result = a + b;
-        } else if ("multiply".equals(operator)) {
-            result = a * b;
-        } else if ("divide".equals(operator)) {
-            result = a / b;
-        } else if ("subtract".equals(operator)) {
-            result = a - b;
-        }
-
-        return result;
+        return targetOperation.apply(a, b);
     }
 }
